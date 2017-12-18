@@ -10,7 +10,7 @@ Install [Node.js](https://nodejs.org/en/), the [Express framework](https://expre
 
 ### Usage
 
-Run `node index.js` and to try visiting http://localhost:3000 from multiple browser tabs. 
+Run `node index.js` and try visiting http://localhost:3000 from multiple browser tabs. 
 
 ## Author
 
