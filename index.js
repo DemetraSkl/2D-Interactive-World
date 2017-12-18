@@ -35,18 +35,14 @@ io.on('connection', function(socket) {
 
     socket.on('new', function(user) {
         console.log("Added another user : " + user.name);
-        console.log("Got the USER ID tooo " + user.idNum);
         USERS.push(user);
         allClients.push({"client_id": user.idNum, "sock_id": socket.id});
     })
 
     socket.on('user info', function(user) {
-        console.log("User emitted", user.color);
-        console.log("USERS length", USERS.length);
         
         for(i = 0; i < USERS.length; i++){
             if (USERS[i].name == user.name){
-                console.log("Updated user : " + user.name);
                 USERS[i] = user;
             }
         }

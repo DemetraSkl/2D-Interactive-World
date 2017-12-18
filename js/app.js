@@ -19,7 +19,6 @@ $(function() {
 
     function getRandomColor() {
         var letters = '0123456789ABCDEF';
-        console.log("Getting color");
         var color = '#';
         for (var i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
@@ -47,11 +46,9 @@ $(function() {
 
     // All User objects
     socket.on('all users', function(all) {
-        console.log("users' info received on front end");
         var tmp_list = [];
         for (i = 0; i < all.length; i++) {
             var tmp_usr = new User(all[i].name, all[i].idNum, all[i].x, all[i].y, all[i].color);
-            console.log("users' info received on front endettaaaad  " + all[i].idNum);
             tmp_list.push(tmp_usr);
         }
 
