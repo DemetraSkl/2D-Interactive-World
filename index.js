@@ -14,7 +14,7 @@ app.get('/css/styles.css', function(req, res) {
 });
 
 app.get('/js/app.js', function(req, res) {
-    res.sendFile(__dirname + '/js/koApp.js')
+    res.sendFile(__dirname + '/js/app.js')
 });
 
 app.get('/js/data.js', function(req, res) {
