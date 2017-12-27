@@ -75,6 +75,7 @@ $(function() {
     // On client side when we capture chat message event, we'll include it in the page
     socket.on('chat message', function(msg) {
         $('#messages').append($('<li>').text(msg[0] + " : " + msg[1]));
+        $("#messages").scrollTop(300);
     });
 
 
