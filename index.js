@@ -25,10 +25,13 @@ var USERS = [];
 
 var allClients = [];
 
+var ALL_MESSAGES = [];
+
 io.on('connection', function(socket) {
     console.log('A user is connected');
 
     socket.on('chat message', function(msg) {
+        ALL_MESSAGES.push({"name": msg[0], "message": msg[1]});
         io.emit('chat message', msg); // emit the event from the server to the rest of the users
     });
 
@@ -37,6 +40,7 @@ io.on('connection', function(socket) {
         console.log("Added another user : " + user.name);
         USERS.push(user);
         allClients.push({"client_id": user.idNum, "sock_id": socket.id});
+        socket.emit('archived', ALL_MESSAGES);
     })
 
     socket.on('user info', function(user) {
