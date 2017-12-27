@@ -18,6 +18,11 @@ function User(name, idNum, x, y, color) {
         context.beginPath();
         context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
         context.fill();
+        context.beginPath();
+        context.font = '10px Courier New';
+        context.fillStyle = "#05386B";
+        context.fillText(this.name.slice(0, 1), this.x - this.radius / 2, this.y + this.radius / 2);
+        context.fill();
     };
 
     this.drawAvatar = function() {
@@ -27,6 +32,11 @@ function User(name, idNum, x, y, color) {
         if (this.conn) {
             context.beginPath();
             context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            context.fill();
+            context.beginPath();
+            context.font = '10px Courier New';
+            context.fillStyle = "#05386B";
+            context.fillText(this.name.slice(0, 1), this.x - this.radius / 2, this.y + this.radius / 2);
             context.fill();
         }
     };
@@ -52,7 +62,7 @@ function User(name, idNum, x, y, color) {
     this.clear = function() {
         canvas = document.querySelector("#c");
         context = canvas.getContext('2d');
-  
+
         var x_corner = this.x - this.radius;
         var y_corner = this.y - this.radius;
 
